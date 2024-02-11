@@ -1,13 +1,13 @@
 package me.jellysquid.mods.sodium.client.gl.shader;
 
-import org.lwjgl.opengl.GL20C;
+import org.lwjgl.opengl.ARBShaderObjects;
 
 /**
- * An enumeration over the supported OpenGL shader types.
+ * Uma enumeração dos tipos de shaders OpenGL suportados.
  */
 public enum ShaderType {
-    VERTEX(GL20C.GL_VERTEX_SHADER),
-    FRAGMENT(GL20C.GL_FRAGMENT_SHADER);
+    VERTEX(ARBShaderObjects.ARB_VERTEX_SHADER),
+    FRAGMENT(ARBShaderObjects.ARB_FRAGMENT_SHADER);
 
     public final int id;
 
