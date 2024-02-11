@@ -20,6 +20,6 @@ public class MixinClientPlayNetworkHandler {
     @Inject(method = "onUnloadChunk", at = @At("RETURN"))
     private void postUnloadChunk(UnloadChunkS2CPacket packet, CallbackInfo ci) {
         SodiumWorldRenderer.instance()
-                .onChunkRemoved(packet.posX(), packet.posZ());
+                .onChunkStatusRemoved(packet.pos().x, packet.pos().z;
     }
 }
