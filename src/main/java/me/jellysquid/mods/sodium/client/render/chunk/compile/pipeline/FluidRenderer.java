@@ -178,11 +178,11 @@ public class FluidRenderer {
             if (velocity.x == 0.0D && velocity.z == 0.0D) {
                 sprite = sprites[0];
                 facing = ModelQuadFacing.UP;
-                u1 = sprite.getFrameU(0.0D);
-                v1 = sprite.getFrameV(0.0D);
+                u1 = sprite.getFrameU(0.0F);
+                v1 = sprite.getFrameV(0.0F);
                 u2 = u1;
-                v2 = sprite.getFrameV(16.0D);
-                u3 = sprite.getFrameU(16.0D);
+                v2 = sprite.getFrameV(16.0F);
+                u3 = sprite.getFrameU(16.0F);
                 v3 = v2;
                 u4 = u3;
                 v4 = v1;
@@ -338,11 +338,11 @@ public class FluidRenderer {
                     }
                 }
 
-                float u1 = sprite.getFrameU(0.0D);
-                float u2 = sprite.getFrameU(8.0D);
+                float u1 = sprite.getFrameU(0.0F);
+                float u2 = sprite.getFrameU(8.0F);
                 float v1 = sprite.getFrameV((1.0F - c1) * 16.0F * 0.5F);
                 float v2 = sprite.getFrameV((1.0F - c2) * 16.0F * 0.5F);
-                float v3 = sprite.getFrameV(8.0D);
+                float v3 = sprite.getFrameV(8.0F);
 
                 quad.setSprite(sprite);
 
