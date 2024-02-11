@@ -14,12 +14,12 @@ public class MixinClientPlayNetworkHandler {
     @Inject(method = "onChunkData", at = @At("RETURN"))
     private void postLoadChunk(ChunkDataS2CPacket packet, CallbackInfo ci) {
         SodiumWorldRenderer.instance()
-                .onChunkAdded(packet.getX(), packet.getZ());
+                .onChunkAdded(packet.getChunkX(), packet.getChunkZ());
     }
 
     @Inject(method = "onUnloadChunk", at = @At("RETURN"))
     private void postUnloadChunk(UnloadChunkS2CPacket packet, CallbackInfo ci) {
         SodiumWorldRenderer.instance()
-                .onChunkRemoved(packet.getX(), packet.getZ());
+                .onChunkRemoved(packet.posX(), packet.posZ());
     }
 }
