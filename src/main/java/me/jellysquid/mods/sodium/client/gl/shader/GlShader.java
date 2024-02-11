@@ -56,12 +56,13 @@ public class GlShader extends GlObject {
         }
 
         byte[] logBytes = new byte[logLength];
-        int bytesWritten = GlStateManager.glGetShaderInfoLog(handle, logLength, null, logBytes);
+        // Correção da lista de argumentos para glGetShaderInfoLog:
+        GlStateManager.glGetShaderInfoLog(handle, logLength, logBytes, 0);
 
-        if (bytesWritten <= 0) {
+        if (logBytes[0] == 0) {
             return "";
         }
 
-        return new String(logBytes, 0, bytesWritten);
+        return new String(logBytes);
     }
 }
